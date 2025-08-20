@@ -1,0 +1,12 @@
+{% extends "myapp/base.html" %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+  <h1>My Projects</h1>
+  <ul>
+    {% for project in projects %}
+      <li><b>{{ project.name }}</b> – {{ project.desc }}</li>
+    {% empty %}
+      <li>No projects available yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

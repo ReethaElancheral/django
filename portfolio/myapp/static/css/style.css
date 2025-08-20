@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f5ff;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #6F145F;
+  color: white;
+  padding: 1rem;
+}
+header a {
+  color: #DDBAE7;
+  margin-right: 15px;
+  text-decoration: none;
+}
+h1, h2 {
+  color: #6F145F;
+}
+ul { list-style: square; }
