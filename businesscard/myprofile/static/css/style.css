@@ -1,0 +1,19 @@
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background: #6F145F;
+    border-color: #6F145F;
+}
+
+.btn-primary:hover {
+    background: #DDBAE7;
+    border-color: #DDBAE7;
+    color: #000;
+}
+
+.border-purple {
+    border-color: #6F145F !important;
+}

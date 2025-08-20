@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ name }} | Business Card{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center min-vh-100" style="background: linear-gradient(135deg, #6F145F, #DDBAE7);">
+  <div class="card shadow-lg text-center p-4" style="max-width: 400px; border-radius: 20px; background: white;">
+    
+    <!-- Profile Image -->
+       <div class="d-flex justify-content-center mb-3">
+      <img src="{% static 'images/profile.jpeg' %}" class="rounded-circle border border-3 border-purple" width="130" height="130" alt="Profile">
+    </div>
+
+    <!-- Name & Title -->
+    <h3 class="fw-bold">{{ name }}</h3>
+    <p class="text-muted mb-3">{{ title }}</p>
+
+    <!-- Contact Info -->
+    <div class="mb-3">
+      <p class="mb-1"><strong>Email:</strong> <a href="mailto:{{ email }}">{{ email }}</a></p>
+      <p class="mb-1"><strong>Phone:</strong> <a href="tel:{{ phone }}">{{ phone }}</a></p>
+    </div>
+
+    <!-- Social Links -->
+    <div class="d-flex justify-content-center gap-2 mb-3">
+      <a href="{{ website }}" target="_blank" class="btn btn-primary btn-sm fw-bold">Website</a>
+      <a href="{{ linkedin }}" target="_blank" class="btn btn-outline-primary btn-sm fw-bold">LinkedIn</a>
+      <a href="{{ github }}" target="_blank" class="btn btn-outline-dark btn-sm fw-bold">GitHub</a>
+    </div>
+
+    <!-- Footer Note -->
+    <p class="text-muted small mt-3">&copy; {{ name }} | All Rights Reserved</p>
+
+  </div>
+</div>
+{% endblock %}
