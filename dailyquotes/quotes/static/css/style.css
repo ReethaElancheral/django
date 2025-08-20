@@ -1,0 +1,21 @@
+body {
+    background: url('../images/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.quote-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: auto;
+}
+
+h1 {
+    color: #6F145F;
+}
+
+p {
+    color: #333;
+}
