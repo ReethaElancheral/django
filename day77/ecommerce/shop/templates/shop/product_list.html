@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; }
+    ul.categories { list-style: none; padding: 0; margin-bottom: 16px; }
+    ul.categories li { display: inline-block; margin-right: 8px; }
+    ul.categories li a { padding: 6px 12px; border: 1px solid #ddd; border-radius: 999px; text-decoration: none; color: #333; }
+    ul.categories li a.active { background: #333; color: #fff; border-color: #333; }
+    table { border-collapse: collapse; width: 100%; margin-top: 14px; }
+    th, td { border: 1px solid #eee; padding: 10px; text-align: left; }
+    th { background: #f7f7f7; }
+    .tag { padding:2px 8px; border-radius: 999px; font-size: 12px; display: inline-block; }
+    .ok { background: #e6ffed; border: 1px solid #b7f5c0; }
+    .no { background: #ffeaea; border: 1px solid #ffcccc; }
+   
+.active {
+    font-weight: bold;
+    color: green;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Simple eCommerce Backend</h1>
+
+  <!-- Categories filter -->
+  <ul class="categories">
+    <li><a href="/" class="{% if not active_category %}active{% endif %}">All</a></li>
+    {% for category in categories %}
+      <li>
+        <a href="?category={{ category.id }}" class="{% if active_category == category.id %}active{% endif %}">
+          {{ category.name }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- Products table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in products %}
+      <tr>
+        <td>{{ p.name }}</td>
+        <td>{{ p.category.name }}</td>
+        <td>{{ p.price }}</td>
+        <td>{% if p.in_stock %}<span class="tag ok">In stock</span>{% else %}<span class="tag no">Out of stock</span>{% endif %}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="4">No products available.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p style="margin-top:16px;"><a href="/admin/">Go to Admin →</a></p>
+</body>
+</html>
