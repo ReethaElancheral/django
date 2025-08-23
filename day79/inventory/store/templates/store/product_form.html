@@ -1,0 +1,15 @@
+{% extends 'store/base.html' %}
+{% load crispy_forms_tags %}   {# <-- Load crispy forms #}
+
+{% block content %}
+<h2 class="mb-4">{{ form.instance.pk|yesno:"Update Product,Add Product" }}</h2>
+
+<form method="POST" class="row g-3">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <div class="col-12 mt-3">
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a href="{% url 'product-list' %}" class="btn btn-secondary">Cancel</a>
+  </div>
+</form>
+{% endblock %}
