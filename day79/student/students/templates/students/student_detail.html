@@ -1,13 +1,20 @@
 {% extends 'students/base.html' %}
+{% load static %}
 
 {% block content %}
-<h2>{{ student.name }}</h2>
+<h2 class="mb-4">Student Detail</h2>
 
-<p><strong>Roll No:</strong> {{ student.roll_no }}</p>
-<p><strong>Grade:</strong> {{ student.grade }}</p>
-<p><strong>Active:</strong> {{ student.is_active|yesno:"Yes,No" }}</p>
+<ul class="list-group">
+  <li class="list-group-item"><strong>ID:</strong> {{ student.id }}</li>
+  <li class="list-group-item"><strong>Name:</strong> {{ student.name }}</li>
+  <li class="list-group-item"><strong>Roll No:</strong> {{ student.roll_no }}</li>
+  <li class="list-group-item"><strong>Grade:</strong> {{ student.grade }}</li>
+  <li class="list-group-item"><strong>Active:</strong> {{ student.is_active|yesno:"Yes,No" }}</li>
+</ul>
 
-<a href="{% url 'student-update' student.pk %}" class="btn btn-warning">Edit</a>
-<a href="{% url 'student-delete' student.pk %}" class="btn btn-danger">Delete</a>
-<a href="{% url 'student-list' %}" class="btn btn-secondary">Back</a>
+<div class="mt-3">
+  <a href="{% url 'student-update' student.id %}" class="btn btn-warning">Edit</a>
+  <a href="{% url 'student-delete' student.id %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'student-list' %}" class="btn btn-secondary">Back</a>
+</div>
 {% endblock %}
