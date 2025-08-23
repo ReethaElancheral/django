@@ -1,0 +1,12 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.container {
+  margin: 20px auto;
+  max-width: 600px;
+}
+form {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+}

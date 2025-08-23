@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Welcome to Newsletter App</h2>
+  <p><a href="{% url 'signup' %}" class="btn btn-primary">Signup (ModelForm)</a></p>
+  <p><a href="{% url 'manual' %}" class="btn btn-success">Signup (Manual Form)</a></p>
+{% endblock %}
