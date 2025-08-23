@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Contact Us{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1>Welcome to Our Contact Page</h1>
+    <p class="lead">Send us a message using the forms below.</p>
+    <div class="mt-4">
+        <a href="{% url 'contact_form' %}" class="btn btn-primary me-2">Contact Form (ModelForm)</a>
+        <a href="{% url 'manual_contact_form' %}" class="btn btn-secondary">Manual Form</a>
+    </div>
+</div>
+{% endblock %}
