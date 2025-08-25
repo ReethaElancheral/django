@@ -1,0 +1,17 @@
+{% extends 'portal/base.html' %}
+{% block content %}
+<h2>Available Jobs</h2>
+
+{% if jobs %}
+    <ul>
+    {% for job in jobs %}
+        <li>
+            <strong>{{ job.title }}</strong> - {{ job.posted_on|date:"M d, Y" }}<br>
+            {{ job.description }}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No jobs available at the moment.</p>
+{% endif %}
+{% endblock %}
