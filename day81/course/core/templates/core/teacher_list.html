@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h2>Teachers</h2>
+<ul>
+    {% for teacher in teachers %}
+        <li>
+            {{ teacher.name }} - Courses: 
+            {% for course in teacher.courses.all %}
+                {{ course.title }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
