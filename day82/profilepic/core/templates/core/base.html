@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Upload System</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+    <h1>Profile Upload System</h1>
+    <nav>
+        <a href="{% url 'profile_list' %}">Profiles</a> |
+        <a href="{% url 'profile_create' %}">Add Profile</a>
+    </nav>
+</header>
+<hr>
+{% block content %}{% endblock %}
+</body>
+</html>
