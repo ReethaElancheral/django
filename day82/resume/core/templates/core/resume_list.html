@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h2>Uploaded Resumes</h2>
+<ul>
+    {% for resume in resumes %}
+        <li>
+            {{ resume.name }} ({{ resume.email }})
+            {% if resume.file %}
+                - <a href="{{ resume.file.url }}" download>Download</a>
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>No resumes uploaded yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
