@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h2>Books</h2>
+<ul>
+    {% for book in books %}
+        <li>{{ book.title }} by {{ book.author.name }} - ₹{{ book.price }} - Categories: 
+            {% for cat in book.categories.all %}
+                {{ cat.name }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
