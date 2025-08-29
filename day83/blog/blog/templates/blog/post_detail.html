@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ post.title }}</h2>
+    <p><strong>Author:</strong> {{ post.author.username }}</p>
+    <p><strong>Published:</strong> {{ post.created_at|date:"M d, Y H:i" }}</p>
+    <div>
+        <p>{{ post.content }}</p>
+    </div>
+
+    {% if user == post.author %}
+        <a href="{% url 'post-update' post.pk %}">Edit</a> |
+
+        <form action="{% url 'post-delete' post.pk %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+    {% endif %}
+    
+    <br>
+    <a href="{% url 'post-list' %}">Back to all posts</a>
+</div>
+{% endblock %}
