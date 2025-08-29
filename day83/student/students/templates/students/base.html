@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Manager</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'student-list' %}">Home</a> |
+        <a href="{% url 'student-create' %}">Add Student</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
